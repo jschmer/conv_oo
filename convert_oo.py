@@ -6,6 +6,7 @@ import argparse
 parser = argparse.ArgumentParser(description="""
 Convert media files (for example odp -> pdf)
 >>> The soffice executable of LibreOffice (tested) or OpenOffice (untested) has to be in PATH!
+See http://ask.libreoffice.org/en/question/2641/convert-to-command-line-parameter/?answer=6292#post-id-6292 for info on soffice and supported conversion types
 """,
 formatter_class=argparse.RawTextHelpFormatter)
 parser.add_argument("-s", "--source", action='store', nargs=1, default=".", type=str, help="Source directory where your media files are stored")
