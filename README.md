@@ -1,4 +1,5 @@
 conv_oo
 =======
 
-Simple wrapper around Libre-/Open-Office's soffice executable for converting odp to pdf primarily but can also be used for any conversion soffice supports.
+Simple python3 wrapper around LibreOffice's soffice executable for converting odp to pdf primarily
+but can also be used for any conversion soffice supports.
