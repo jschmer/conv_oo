@@ -5,7 +5,7 @@ import argparse
 
 parser = argparse.ArgumentParser(description="""
 Convert media files (for example odp -> pdf)
->>> The soffice executable of LibreOffice (tested) or OpenOffice (untested) has to be in PATH!
+>>> The soffice executable of LibreOffice has to be in PATH!
 See http://ask.libreoffice.org/en/question/2641/convert-to-command-line-parameter/?answer=6292#post-id-6292 for info on soffice and supported conversion types
 """,
 formatter_class=argparse.RawTextHelpFormatter)
@@ -44,6 +44,7 @@ def quote(path):
     return path
 
 if which("soffice.exe") == None:
+    print("soffice not found! Is it in PATH?!\n")
     parser.print_help()
     sys.exit(2)
 
@@ -73,4 +74,8 @@ else:
 cmd = "soffice.exe --headless --convert-to " + args.type[0] + " --outdir " + outdir + " " + " ".join(files)
 print(cmd)
 
-os.system(cmd)
+print("Run? [y/n] ")
+run = input()
+
+if run == "y":
+    os.system(cmd)
